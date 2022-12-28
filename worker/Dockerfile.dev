@@ -1,0 +1,10 @@
+FROM node:18-alpine
+
+# 2) #############################Download and install a dependency(commands to install additional programs)#############################
+WORKDIR /app
+COPY ./package.json .
+RUN npm i
+COPY . .
+
+# 3) #####################################################Command to run on startup#####################################################
+CMD [ "npm", "run", "dev" ]
